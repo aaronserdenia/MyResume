@@ -1,0 +1,343 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', serif;
+}
+body{
+    background: #ABD2FA;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.mainContainer{
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    min-height: 1000px;
+    background: #fff;
+    margin: 50px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    box-shadow: 0 35px 35px rgba(0, 0, 0, 0.1);
+}
+.mainContainer .left-menu{
+    position: relative;
+    background: #284B63;
+    padding: 40px;
+
+}
+.profile{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+.profile .imageBox{
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.profile .imageBox img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+.profile h2{
+    color: #fff;
+    font-size: 1.5rem;
+    margin-top: 20px;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 600;
+    line-height: 1.4em;
+}
+.profile h2 span{
+    font-size: 0.8em;
+    font-weight: 300;
+}
+.contactInfo{
+    padding-top: 40px;
+}
+.title{
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+.contactInfo ul{
+    position: relative;
+}
+.contactInfo ul li{
+    position: relative;
+    list-style: none;
+    margin: 20px 0;
+    cursor: pointer;
+}
+.contactInfo ul li .icon{
+    display: inline-block;
+    width: 30px;
+    font-size: 18px;
+    color: #fff;
+}
+.contactInfo ul li span{
+    color: #fff;
+    font-weight: 300;
+    text-align: center;
+}
+.contactInfo.education li{
+    margin-bottom: 15px;
+}
+.contactInfo.education h5{
+    color: #ABD2FA;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+.contactInfo.education h4:nth-child(2){
+    color: #fff;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+.contactInfo.education h4{
+    color: #fff;
+    font-weight: 300;
+}
+.contactInfo.language .percent{
+    position: relative;
+    width: 100%;
+    height: 6px;
+    background: #081921;
+    display: block;
+    margin-top: 5px;
+}
+.contactInfo.language .percent div{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: #ABD2FA;
+}
+.mainContainer .right-menu{
+    position: relative;
+    background: #fff;
+    padding: 40px;
+}
+.about{
+    margin-bottom: 50px;
+}
+.about:last-child{
+    margin-bottom: 0;
+}
+.titleMainContent{
+    color: #284B63;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+p{
+    color: #333;
+    text-align: justify;
+}
+.about .box{
+    display: flex;
+    flex-direction: row;
+    margin: 20px 0;
+}
+.about .box .yearCompany{
+    min-width: 150px;
+}
+.about .box .yearCompany h5{
+    text-transform: uppercase;
+    color: #848c90;
+    font-weight: 600;
+}
+.about .box .experienceDetails h4{
+    text-transform: uppercase;
+    color: #2a7da2;
+    font-size: 16px;
+    margin-bottom: 6px;
+}
+.skills .box{
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+}
+.percentageBar .bar{
+    margin: 10px 10px;
+}
+.percentageBar .bar:first-child{
+    margin-top: 0;
+}
+.percentageBar .bar:last-child{
+    margin-bottom: 0;
+}
+.percentageBar .bar .info{
+    margin-bottom: 10px;
+}
+.percentageBar .bar .info span{
+    font-size: 13px;
+    font-weight: 500;
+    animation: showText 0.5s 1s linear forwards;
+    opacity: 0;
+}
+.percentageBar .bar .progressBar{
+    position: relative;
+    border-radius: 10px;
+    width: 100%;
+    height: 5px;
+    background-color: #000;
+    animation: animate 1s cubic-bezier(1,0,0.5,1) forwards;
+    transform: scaleX(0);
+    transform-origin: top;
+}
+@keyframes animate{
+    100%{
+        transform: scaleX(1);
+    }
+}
+.percentageBar .bar .progressBar span{
+    height: 100%;
+    background-color: #2a7da2;
+    position: absolute;
+    border-radius: 10px;
+    animation: animate 1s 1s cubic-bezier(1,0,0.5,1) forwards;
+    transform: scaleX(0);
+    transform-origin: top;
+}
+.percentageBar .bar .progressBar.filipino span{
+    width: 93%;
+}
+.percentageBar .bar .progressBar.english span{
+    width: 81%;
+}
+.percentageBar .bar .progressBar.html span{
+    width: 95%;
+}
+.percentageBar .bar .progressBar.css span{
+    width: 85%;
+}
+.percentageBar .bar .progressBar.jscript span{
+    width: 70%;
+}
+.percentageBar .bar .progressBar.php span{
+    width: 55%;
+}
+.percentageBar .bar .progressBar.mysql span{
+    width: 80%;
+}
+.percentageBar .bar .progressBar.uiuxdesign span{
+    width: 90%;
+}
+.percentageBar .bar .progressBar span::after{
+    position: absolute;
+    padding: 1px 8px;
+    background-color: #000;
+    color: #fff;
+    font-size: 12px;
+    border-radius: 3px;
+    top: -28px;
+    right: -20px;
+    animation: showText 0.5s 1.5s linear forwards;
+    opacity: 0;
+}
+.percentageBar .bar .progressBar.filipino span::after{
+    content: "93%";
+}
+.percentageBar .bar .progressBar.english span::after{
+    content: "81%";
+}
+.percentageBar .bar .progressBar.html span::after{
+    content: "95%";
+}
+.percentageBar .bar .progressBar.css span::after{
+    content: "85%";
+}
+.percentageBar .bar .progressBar.jscript span::after{
+    content: "70%";
+}
+.percentageBar .bar .progressBar.php span::after{
+    content: "55%";
+}
+.percentageBar .bar .progressBar.mysql span::after{
+    content: "80%";
+}
+.percentageBar .bar .progressBar.uiuxdesign span::after{
+    content: "90%";
+}
+.percentageBar .bar .progressBar span::before{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 7px solid transparent;
+    border-bottom-width: 0px;
+    border-right-width: 0px;
+    border-top-color: #000;
+    top: -10px;
+    right: 0;
+    animation: showText 0.5s 1.5s linear forwards;
+    opacity: 0;
+}
+@keyframes showText{
+    100%{
+        opacity: 1;
+    }
+}
+.interest ul{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+.interest ul li{
+    list-style: none;
+    color: #333;
+    font-weight: 500;
+    margin: 10px 0;
+}
+.interest ul li .fa{
+    color: #284B63;
+    font-size: 18px;
+    width: 20px;
+}
+@media (max-width: 1000px) {
+    .mainContainer{
+        margin: 10px;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .interest ul{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 600px){
+    .about .box{
+        flex-direction: column;
+    }
+    .about .box .yearCompany{
+        min-width: 150px;
+        margin-bottom: 5px;
+    }
+    .interest ul{
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .skills .box{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+@media (max-width: 480px){
+    .interest ul{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
